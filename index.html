@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>Form</title>
+    <link href="https://fonts.googleapis.com/css?family=Exo+2:300,400&amp;subset=cyrillic" rel="stylesheet">
+    <link href="css/normalize.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+  </head>
+
+  <body>
+  	<div class="hamburger-icon"></div>
+  	<form name="request" action="https://echo.htmlacademy.ru" method="post" enctype="multipart/form-data">
+  		<h1>Расскажите о&nbsp;своем проекте, и мы предложим решение, которое подойдет для&nbsp;задач вашей компании</h1>
+  		<fieldset>
+	  		<legend>Тип проекта</legend>
+	  		<p><input type="radio" name="project-type" value="system_or_service" checked>Система или сервис</p>
+	  		<p><input type="radio" name="project-type" value="website">Сайт</p>
+	  		<p><input type="radio" name="project-type" value="other">Другое</p>
+	  	</fieldset>
+	  	<fieldset>
+	  		<legend>Услуги</legend>
+	  		<p><input type="checkbox" name="services" value="business-analytics" checked>Бизнес-аналитика</p>
+	  		<p><input type="checkbox" name="services" value="design" checked>Дизайн</p>
+	  		<p><input type="checkbox" name="services" value="development_and_integration" checked>Разработка и интеграция</p>
+	  		<p><input type="checkbox" name="services" value="support">Поддержка</p>
+	  	</fieldset>
+	  	<fieldset>
+	  		<legend>Планируемый бюджет</legend>
+	  		<input type="range" name="budget" min="1" max="100" step="1" value="1">
+	  		<p>до <input type="number" name="budget" value="1"> млн&nbsp;₽</p>
+	  	</fieldset>
+	  	<fieldset>
+	  		<legend>Сроки</legend>
+	  		<input type="range" name="deadlines" min="1" max="6" step="1" value="2">
+	  		<p><input type="number" name="deadlines" value="2"> месяца</p>
+	  	</fieldset>
+			<fieldset>
+				<legend>Задача</legend>
+				<textarea name="task" placeholder="Опишите задачу"></textarea>
+				<input type="file" name="files[]" multiple accept="application/pdf,image/jpeg,image/png,image/tiff,image/x-tiff">
+				<div>
+					<p>Можно загрузить файлы и документы в&nbsp;формате pdf, jpeg, png, tiff</p>
+					<p>Максимальный размер — 30&nbsp;МБ</p>
+				</div>
+				<div>filename1.*</div>
+			</fieldset>
+  		<fieldset>
+  			<legend>Как с&nbsp;вами связаться</legend>
+  			<input type="text" name="client-name" placeholder="Константин" required>
+  			<input type="tel" name="client-telephone" pattern="^[ 0-9]+$" required>
+  		</fieldset>
+  		<button type="submit">Отправить запрос</button>
+  		<p>Нажимая на&nbsp;кнопку, вы даете согласие на&nbsp;обработку персональных данных и соглашаетесь с&nbsp;политикой конфиденциальности.</p>
+		</form>
+  </body>
+</html>
