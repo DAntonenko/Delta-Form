@@ -28,6 +28,11 @@ html {
 	        box-sizing: inherit;
 }
 
+*:focus {
+	border: none;
+	outline: none;
+}
+
 /* for index.html */
 
 body {
@@ -38,6 +43,88 @@ body {
   padding: 0;
 }
 
-form[name='request'] h1 {
+.container {
+	position: relative;
+	max-width: 1440px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 3%;
+	1background-color: blue;
+}
+
+.hamburger-icon {
+	position: absolute;
+	top: 3rem;
+	right: 3rem;
+	cursor: pointer;
+}
+
+form[id='request'] h1 {
 	font-weight: 300;
+	margin-top: 0;
+}
+
+form[id='request'] fieldset {
+	border: none;
+}
+
+.rectangle {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	height: 48px;
+	padding: 0 1.5rem 0 1.5rem;
+	font-size: 20px;
+	font-weight: 300;
+	line-height: 28px;
+	background-color: #474747;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+.rectangle:hover {
+	background-color: #373737;
+}
+
+input:checked + label.rectangle {
+	background-color: #1F48E7;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+	display: none;
+}
+
+form[id='request'] textarea,
+form[id='request'] input[type='text'],
+form[id='request'] input[type='tel'] {
+	color: inherit;
+	background-color: inherit;
+	border: none;
+	outline: none;
+	resize: none;
+}
+
+form[id='request'] input[type='file'] {
+	color: inherit;
+	background-color: inherit;
+	border: none;
+	outline: none;
+	resize: none;
+}
+
+form[id='request'] button {
+	color: inherit;
+	border: none;
+	outline: none;
+}
+
+.rectangle-big {
+	width: 273px;
+	height: 64px;
+	background-color: #1F48E7;
+}
+
+.rectangle-big:hover {
+	background-color: #2043CB;
 }
