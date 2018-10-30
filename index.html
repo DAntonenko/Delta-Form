@@ -42,7 +42,7 @@
 					<legend class="visually-hidden">Задача</legend>
 					<textarea name="task" placeholder="Опишите задачу"></textarea>
 					<input type="file" name="files[]" multiple accept="application/pdf,image/jpeg,image/png,image/tiff,image/x-tiff">
-					<div>
+					<div class="comment">
 						<p>Можно загрузить файлы и документы в&nbsp;формате pdf, jpeg, png, tiff</p>
 						<p>Максимальный размер — 30&nbsp;МБ</p>
 					</div>
@@ -50,13 +50,18 @@
 				</fieldset>
 	  		<fieldset>
 	  			<legend>Как с&nbsp;вами связаться</legend>
-	  			<input type="text" name="client-name" placeholder="Константин" required>
-	  			<input type="tel" name="client-telephone" pattern="^[ 0-9]+$" required>
+	  			<label for="client-name">Имя</label>
+	  			<input type="text" name="client-name" id="client-name" placeholder="Константин" required>
+	  			<input type="tel" name="client-telephone" pattern="^[ 0-9]+$" placeholder="Телефон" required>
 	  		</fieldset>
 	  		<button class="rectangle rectangle-big" type="submit">Отправить запрос</button>
-	  		<p>Нажимая на&nbsp;кнопку, вы даете согласие на&nbsp;обработку персональных данных и соглашаетесь с&nbsp;политикой конфиденциальности.</p>
+	  		<p class="comment">Нажимая на&nbsp;кнопку, вы даете согласие на&nbsp;обработку персональных данных и соглашаетесь с&nbsp;политикой конфиденциальности.</p>
 			</form>
 		</div>
 		<script src="./js/form.js"></script>
+		<script type="text/javascript">
+			budgetOutput();
+		  deadlineOutput();
+		</script>
   </body>
 </html>

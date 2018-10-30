@@ -37,6 +37,8 @@ html {
 
 body {
 	font-family: 'Exo 2', 'Arial', sans-serif;
+	font-size: 16px;
+	line-height: 24px;
 	color: #fff;
 	background-color: #000;
 	margin: 0;
@@ -60,10 +62,14 @@ body {
 
 form[id='request'] h1 {
 	font-weight: 300;
+	font-size: 36px;
+	line-height: 48px;
 	margin-top: 0;
 }
 
 form[id='request'] fieldset {
+	padding: 0;
+	margin: 0;
 	border: none;
 }
 
@@ -183,6 +189,12 @@ input[type='range']::-ms-tooltip {
 
 .output {
 	height: 28px;
+	font-size: 20px;
+	line-height: 28px;
+}
+
+#budget-output {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 form[id='request'] textarea,
@@ -203,6 +215,35 @@ form[id='request'] input[type='file'] {
 	resize: none;
 }
 
+.comment {
+	color: rgba(255,255,255,0.4);
+	font-size: 14px;
+	font-weight: 300;
+	line-height: 20px;
+}
+
+label[for='client-name'] {
+	display: block;
+	color: rgba(255,255,255,0.4);
+	font-size: 12px;	
+}
+
+input[id='client-name']::-webkit-input-placeholder {
+	color: #fff;
+}
+
+input[id='client-name']::-moz-placeholder {
+	color: #fff;
+}
+
+input[id='client-name']:-moz-placeholder {
+	color: #fff;
+}
+
+input[id='client-name']:-ms-input-placeholder {
+	color: #fff;
+}
+
 form[id='request'] button {
 	color: inherit;
 	border: none;
@@ -212,6 +253,8 @@ form[id='request'] button {
 .rectangle-big {
 	width: 273px;
 	height: 64px;
+	font-size: 24px;
+	line-height: 32px;
 	background-color: #1F48E7;
 }
 
