@@ -30,13 +30,13 @@
 		  	</fieldset>
 		  	<fieldset>
 		  		<legend>Планируемый бюджет</legend>
-		  		<input type="range" name="budget" min="0" max="10" step="5" value="0">
-		  		<p>до 1 млн&nbsp;₽</p>
+		  		<input type="range" name="budget" min="0" max="10" step="5" value="0" id="budget-input" onchange="budgetOutput()">
+		  		<p class="output" id="budget-output"></p>
 		  	</fieldset>
 		  	<fieldset>
 		  		<legend>Сроки</legend>
-		  		<input type="range" name="deadlines" min="1" max="12" step="1" value="2">
-		  		<p>2 месяца</p>
+		  		<input type="range" name="deadline" min="1" max="12" step="1" value="2" id="deadline-input" onchange="deadlineOutput()">
+		  		<p class="output"><span id="deadline-output"></span><span id="months"></span></p>
 		  	</fieldset>
 				<fieldset>
 					<legend class="visually-hidden">Задача</legend>

@@ -49,7 +49,6 @@ body {
 	margin-left: auto;
 	margin-right: auto;
 	padding: 3%;
-	1background-color: blue;
 }
 
 .hamburger-icon {
@@ -90,9 +89,100 @@ input:checked + label.rectangle {
 	background-color: #1F48E7;
 }
 
-input[type="radio"],
-input[type="checkbox"] {
+input[type='radio'],
+input[type='checkbox'] {
 	display: none;
+}
+
+/* slider */
+
+input[type='range'] {
+	width: 200px;
+	height: 32px;
+	padding: 0;
+	margin: 0;
+  background-color: #000;
+  border-radius: 2px;
+}
+
+/* webkit */
+
+input[type='range'] {
+	-webkit-appearance: none;
+}
+
+input[type='range']::-webkit-slider-runnable-track {
+	height: 2px;
+	background-color: rgba(255,255,255,0.6);
+}
+
+input[type='range']::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	position: relative;
+	top: -16px;
+	box-sizing: content-box;
+	width: 32px;
+  height: 32px;
+  background-color: #1F48E7;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* moz */
+
+input[type='range']::-moz-range-track {
+	height: 2px;
+	background-color: rgba(255,255,255,0.6);
+}
+
+input[type='range']::-moz-range-progress {
+	background-color: #1F48E7;	
+}
+
+input[type='range']::-moz-range-thumb {
+	width: 32px;
+  height: 32px;
+  background-color: #1F48E7;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* ie */
+
+input[type='range']::-ms-track {
+	height: 2px;
+	border-color: transparent;
+	color: transparent;
+	background-color: #000;
+}
+
+input[type='range']::-ms-thumb {
+  width: 32px;
+  height: 32px;
+  background-color: #1F48E7;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+input[type='range']::-ms-fill-lower {
+  background-color: #1F48E7;
+}
+
+input[type='range']::-ms-fill-upper {  
+  background-color: rgba(255,255,255,0.6);
+}
+
+input[type='range']::-ms-tooltip {
+	display: none;
+}
+
+/* */
+
+.output {
+	height: 28px;
 }
 
 form[id='request'] textarea,
