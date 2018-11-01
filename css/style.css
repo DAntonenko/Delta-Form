@@ -54,6 +54,8 @@ body {
 
 form[id='request'] {
 	position: relative;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
 	max-width: 1440px;
 	margin-left: auto;
@@ -61,19 +63,25 @@ form[id='request'] {
 }
 
 .left-column {
-	flex-basis: 110px;
-	flex-shrink: 100;
+	-ms-flex-preferred-size: 110px;
+	    flex-basis: 110px;
+	-ms-flex-negative: 100;
+	    flex-shrink: 100;
 }
 
 .central-column {
-	flex-basis: 1000px;
-	flex-shrink: 10;
+	-ms-flex-preferred-size: 1000px;
+	    flex-basis: 1000px;
+	-ms-flex-negative: 10;
+	    flex-shrink: 10;
 	padding: 10px;
 }
 
 .right-column {
-	flex-basis: 330px;
-	flex-shrink: 100;
+	-ms-flex-preferred-size: 330px;
+	    flex-basis: 330px;
+	-ms-flex-negative: 100;
+	    flex-shrink: 100;
 }
 
 form[id='request'] h1 {
@@ -94,9 +102,15 @@ form[id='request'] legend {
 }
 
 .rectangle {
+	display: -webkit-inline-box;
+	display: -ms-inline-flexbox;
 	display: inline-flex;
-	justify-content: center;
-	align-items: center;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
 	height: 48px;
 	margin-top: 16px;
 	margin-right: 10px;
@@ -168,7 +182,8 @@ input[type='range']::-webkit-slider-thumb {
 	-webkit-appearance: none;
 	position: relative;
 	top: -16px;
-	box-sizing: content-box;
+	-webkit-box-sizing: content-box;
+	        box-sizing: content-box;
 	width: 32px;
   height: 32px;
   background-color: #1F48E7;
@@ -300,7 +315,8 @@ form[id='request'] input:focus:-ms-input-placeholder {
 }
 
 .file-upload-label {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   -moz-box-sizing: border-box;
   margin-right: 64px;
   vertical-align: top;
@@ -391,15 +407,21 @@ input[id='client-name'] {
 }
 
 .send-request {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	align-items: flex-start;
+	-webkit-box-align: start;
+	    -ms-flex-align: start;
+	        align-items: flex-start;
 	max-width: 735px;
 	margin-bottom: 70px;
 }
 
 form[id='request'] button {
-	flex-basis: 273px;
-	flex-shrink: 0;
+	-ms-flex-preferred-size: 273px;
+	    flex-basis: 273px;
+	-ms-flex-negative: 0;
+	    flex-shrink: 0;
 	color: inherit;
 	border: none;
 	outline: none;
@@ -420,7 +442,8 @@ form[id='request'] button {
 }
 
 .send-request p {
-	flex-basis: 446px;
+	-ms-flex-preferred-size: 446px;
+	    flex-basis: 446px;
 }
 
 /* mobile version styles */
@@ -436,23 +459,30 @@ form[id='request'] button {
 	}
 
 	.left-column {
-		flex-basis: 20px;
-		flex-shrink: 100;
+		-ms-flex-preferred-size: 20px;
+		    flex-basis: 20px;
+		-ms-flex-negative: 100;
+		    flex-shrink: 100;
 	}
 
 	.central-column {
-		flex-basis: 335px;
-		flex-shrink: 10;
+		-ms-flex-preferred-size: 335px;
+		    flex-basis: 335px;
+		-ms-flex-negative: 10;
+		    flex-shrink: 10;
 		padding: 20px;
 	}
 
 	.right-column {
-		flex-basis: 20px;
-		flex-shrink: 100;
+		-ms-flex-preferred-size: 20px;
+		    flex-basis: 20px;
+		-ms-flex-negative: 100;
+		    flex-shrink: 100;
 	}
 
 	form[id='request'] h1 {
-		box-sizing: content-box;
+		-webkit-box-sizing: content-box;
+		        box-sizing: content-box;
 		font-size: 24px;
 		line-height: 32px;
 		margin-top: 20px;
@@ -510,8 +540,13 @@ form[id='request'] button {
 	}
 
 	.file-upload {
+		display: -webkit-box;
+		display: -ms-flexbox;
 		display: flex;
-		flex-direction: column;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		    -ms-flex-direction: column;
+		        flex-direction: column;
 	}
 
 	.file-upload-label,
