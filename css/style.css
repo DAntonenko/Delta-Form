@@ -423,3 +423,149 @@ form[id='request'] button {
 	flex-basis: 446px;
 }
 
+/* mobile version styles */
+
+@media (max-width: 800px) {
+	
+	.hamburger-icon {
+		display: none;
+	}
+
+	form[id='request'] {
+		max-width: 375px;
+	}
+
+	.left-column {
+		flex-basis: 20px;
+		flex-shrink: 100;
+	}
+
+	.central-column {
+		flex-basis: 335px;
+		flex-shrink: 10;
+		padding: 20px;
+	}
+
+	.right-column {
+		flex-basis: 20px;
+		flex-shrink: 100;
+	}
+
+	form[id='request'] h1 {
+		box-sizing: content-box;
+		font-size: 24px;
+		line-height: 32px;
+		margin-top: 20px;
+	}
+
+	form[id='request'] fieldset:nth-of-type(1),
+	form[id='request'] fieldset:nth-of-type(3),
+	form[id='request'] fieldset:nth-of-type(5) {
+		margin: 48px 0 0 0;
+	}
+
+	form[id='request'] fieldset:nth-of-type(2) {
+		margin: 40px 0 0 0;
+	}
+
+	form[id='request'] fieldset:nth-of-type(4) {
+		margin: 24px 0 0 0;
+	}
+
+	form[id='request'] fieldset:nth-of-type(6) {
+		margin: 64px 0 0 0;
+	}
+
+	.rectangle {
+		height: 29pt;
+		margin-right: 5pt;
+		font-size: 12pt;
+		font-weight: 400;
+		line-height: 14pt;
+	}
+
+	.rectangle-narrow {
+		width: 120px;
+	}
+
+	.rectangle-middle {
+		width: 183px;
+	}
+
+	.rectangle-wide {
+		width: 224px;
+	}
+
+	input[type='range'] {
+		width: 335px;
+		height: 32px;
+		padding: 0;
+		margin: 32px 0 0 0;
+	  background-color: #000;
+	  border-radius: 2px;
+	}
+
+	form[id='request'] textarea {
+		width: 100%;
+	}
+
+	.file-upload {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.file-upload-label,
+	.file-upload-output {
+	  display: block;
+	}
+
+	.file-upload-list {
+		padding-left: 0;
+	}
+
+	.file-upload .comment {
+		width: 70%;
+		margin-left: 21px;
+	}
+
+	form[id='request'] fieldset.connection {
+		margin-bottom: 40px;
+	}
+
+	label[for='client-name'] {
+		font-size: 12px;
+		line-height: 12px;
+	}
+
+	.label-show {
+		color: rgba(255,255,255,0.4) !important;
+	}
+
+	input[id='client-name'],
+	input[id='client-telephone'] {
+		width: 335px;
+		font-size: 20px;
+		line-height: 24px;
+	}
+
+	input[id='client-name'] {
+		margin-right: 0;
+	}
+
+	input[id='client-telephone'] {
+		margin-top: 34px;
+	}
+
+	.send-request {
+		display: block;
+		margin-bottom: 0;
+	}
+
+	.rectangle-big {
+		width: 100%;
+		height: 60px;
+		margin: 0 0 12px 0;
+		font-size: 20px;
+		line-height: 28px;
+	}
+}
