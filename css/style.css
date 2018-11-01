@@ -45,32 +45,52 @@ body {
   padding: 0;
 }
 
-.container {
+.hamburger-icon {
+	position: absolute;
+	top: 50px;
+	right: 48px;
+	cursor: pointer;
+}
+
+form[id='request'] {
 	position: relative;
+	display: flex;
 	max-width: 1440px;
 	margin-left: auto;
 	margin-right: auto;
-	padding: 3%;
 }
 
-.hamburger-icon {
-	position: absolute;
-	top: 3rem;
-	right: 3rem;
-	cursor: pointer;
+.left-column {
+	flex-basis: 110px;
+	flex-shrink: 100;
+}
+
+.central-column {
+	flex-basis: 1000px;
+	flex-shrink: 10;
+	padding: 10px;
+}
+
+.right-column {
+	flex-basis: 330px;
+	flex-shrink: 100;
 }
 
 form[id='request'] h1 {
 	font-weight: 300;
 	font-size: 36px;
 	line-height: 48px;
-	margin-top: 0;
+	margin-top: 70px;
 }
 
 form[id='request'] fieldset {
 	padding: 0;
-	margin: 0;
+	margin: 64px 0 0 0;
 	border: none;
+}
+
+form[id='request'] legend {
+	font-weight: 300;
 }
 
 .rectangle {
@@ -78,13 +98,26 @@ form[id='request'] fieldset {
 	justify-content: center;
 	align-items: center;
 	height: 48px;
-	padding: 0 1.5rem 0 1.5rem;
+	margin-top: 16px;
+	margin-right: 10px;
 	font-size: 20px;
 	font-weight: 300;
 	line-height: 28px;
 	background-color: #474747;
 	border-radius: 4px;
 	cursor: pointer;
+}
+
+.rectangle-narrow {
+	width: 200px;
+}
+
+.rectangle-middle {
+	width: 235px;
+}
+
+.rectangle-wide {
+	width: 290px;
 }
 
 .rectangle:hover {
@@ -100,13 +133,22 @@ input[type='checkbox'] {
 	display: none;
 }
 
+.fieldset-budget,
+.fieldset-deadlines {
+	display: inline-block;
+}
+
+form[id='request'] .fieldset-budget {
+	margin-right: 97px;
+}
+
 /* slider */
 
 input[type='range'] {
-	width: 200px;
+	width: 270px;
 	height: 32px;
 	padding: 0;
-	margin: 0;
+	margin: 32px 0 0 0;
   background-color: #000;
   border-radius: 2px;
 }
@@ -185,7 +227,7 @@ input[type='range']::-ms-tooltip {
 	display: none;
 }
 
-/* */
+/* the end of slider styles */
 
 .output {
 	height: 28px;
@@ -207,12 +249,104 @@ form[id='request'] input[type='tel'] {
 	resize: none;
 }
 
-form[id='request'] input[type='file'] {
-	color: inherit;
-	background-color: inherit;
-	border: none;
-	outline: none;
-	resize: none;
+form[id='request'] textarea {
+	width: 70%;
+}
+
+form[id='request'] textarea,
+form[id='request'] input[type='text'],
+form[id='request'] input[type='tel'] {
+	border-bottom: 1px solid rgba(255,255,255,0.5);
+}
+
+form[id='request'] textarea:focus,
+form[id='request'] input[type='text']:focus,
+form[id='request'] input[type='tel']:focus {
+	border-bottom: 1px solid #fff;
+}
+
+form[id='request'] textarea:focus::-webkit-input-placeholder,
+form[id='request'] input:focus::-webkit-input-placeholder {
+	color: #fff;
+}
+
+form[id='request'] textarea:focus::-moz-placeholder,
+form[id='request'] input:focus::-moz-placeholder {
+	color: #fff;
+}
+
+form[id='request'] textarea:focus:focus:-moz-placeholder,
+form[id='request'] input:focus:-moz-placeholder {
+	color: #fff;
+}
+
+form[id='request'] textarea:focus:focus:-ms-input-placeholder,
+form[id='request'] input:focus:-ms-input-placeholder {
+	color: #fff;
+}
+
+.file-upload {
+	display: block;
+	position: relative;
+  overflow: hidden;
+  margin-top: 24px;
+  font-weight: 300;
+}
+
+.file-upload-label,
+.file-upload-output {
+  display: inline-block;
+  cursor: pointer
+}
+
+.file-upload-label {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  margin-right: 64px;
+  vertical-align: top;
+}
+
+.file-upload-label::before {
+	content: '';
+	display: inline-block;
+	position: relative;
+	top: 7px;
+	width: 12px;
+	height: 26px;
+	margin-right: 8px;
+	background-image: url('../img/attach_file/attach.svg');
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.file-upload-label:hover::before {
+	background-image: url('../img/attach_file/attach-hover.svg');
+}
+
+.file-upload input {
+	display: none;
+}
+
+.file-upload-list {
+	list-style: none;
+	margin-top: 10px;
+	vertical-align: top;
+}
+
+.upload-list-element::before {
+	content: '';
+	display: inline-block;
+	position: relative;
+	width: 12px;
+	height: 12px;
+	margin-right: 8px;
+	background-image: url('../img/close/default.svg');
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.upload-list-element:hover::before {
+	background-image: url('../img/close/hover.svg');
 }
 
 .comment {
@@ -222,29 +356,50 @@ form[id='request'] input[type='file'] {
 	line-height: 20px;
 }
 
+.file-upload .comment {
+	display: inline-block;
+	float: right;
+	width: 30%;
+	vertical-align: top;
+}
+
+form[id='request'] fieldset.connection {
+	margin: 0 0 64px 0;
+}
+
+.connection legend {
+	margin-bottom: 16px;
+}
+
 label[for='client-name'] {
 	display: block;
-	color: rgba(255,255,255,0.4);
+	color: transparent;
 	font-size: 12px;	
 }
 
-input[id='client-name']::-webkit-input-placeholder {
-	color: #fff;
+.label-show {
+	color: rgba(255,255,255,0.4) !important;
 }
 
-input[id='client-name']::-moz-placeholder {
-	color: #fff;
+input[id='client-name'],
+input[id='client-telephone'] {
+	width: 270px;
 }
 
-input[id='client-name']:-moz-placeholder {
-	color: #fff;
+input[id='client-name'] {
+	margin-right: 72px;
 }
 
-input[id='client-name']:-ms-input-placeholder {
-	color: #fff;
+.send-request {
+	display: flex;
+	align-items: flex-start;
+	max-width: 735px;
+	margin-bottom: 70px;
 }
 
 form[id='request'] button {
+	flex-basis: 273px;
+	flex-shrink: 0;
 	color: inherit;
 	border: none;
 	outline: none;
@@ -253,6 +408,8 @@ form[id='request'] button {
 .rectangle-big {
 	width: 273px;
 	height: 64px;
+	margin: 0 16px 0 0;
+	font-weight: 400;
 	font-size: 24px;
 	line-height: 32px;
 	background-color: #1F48E7;
@@ -261,3 +418,8 @@ form[id='request'] button {
 .rectangle-big:hover {
 	background-color: #2043CB;
 }
+
+.send-request p {
+	flex-basis: 446px;
+}
+

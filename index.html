@@ -9,57 +9,73 @@
   </head>
 
   <body>
-		<div class="container">
-	  	<div class="hamburger-icon">
-	  		<img src="pics/burger/blue.svg">
-	  	</div>
-	  	<form id="request" action="https://echo.htmlacademy.ru" method="post" enctype="multipart/form-data">
+  	<div class="hamburger-icon">
+  		<img src="img/burger/burger_blue.svg" alt="Меню">
+  	</div>
+  	<form id="request" action="https://echo.htmlacademy.ru" method="post" enctype="multipart/form-data">
+  		<div class="left-column"></div>
+  		<div class="central-column">
 	  		<h1>Расскажите о&nbsp;своем проекте, и мы предложим решение, которое подойдет для&nbsp;задач вашей компании</h1>
+
 	  		<fieldset>
 		  		<legend>Тип проекта</legend>
-		  		<input type="radio" name="project-type" value="system_or_service" id="system_or_service" checked><label for="system_or_service" class="rectangle">Система или сервис</label>
-		  		<input type="radio" name="project-type" value="website" id="website"><label for="website" class="rectangle">Сайт</label>
-		  		<input type="radio" name="project-type" value="other" id="other"><label for="other" class="rectangle">Другое</label>
+		  		<input type="radio" name="project-type" value="system_or_service" id="system_or_service" checked><label for="system_or_service" class="rectangle rectangle-middle">Система или сервис</label>
+		  		<input type="radio" name="project-type" value="website" id="website"><label for="website" class="rectangle rectangle-narrow">Сайт</label>
+		  		<input type="radio" name="project-type" value="other" id="other"><label for="other" class="rectangle rectangle-narrow">Другое</label>
 		  	</fieldset>
+
 		  	<fieldset>
 		  		<legend>Услуги</legend>
-		  		<input type="checkbox" name="services" value="business-analytics" id="business-analytics" checked><label for="business-analytics" class="rectangle">Бизнес-аналитика</label>
-		  		<input type="checkbox" name="services" value="design" id="design" checked><label for="design" class="rectangle">Дизайн</label>
-		  		<input type="checkbox" name="services" value="development_and_integration" id="development_and_integration" checked><label for="development_and_integration" class="rectangle">Разработка и интеграция</label>
-		  		<input type="checkbox" name="services" value="support" id="support"><label for="support" class="rectangle">Поддержка</label>
+		  		<input type="checkbox" name="services" value="business-analytics" id="business-analytics" checked><label for="business-analytics" class="rectangle rectangle-middle">Бизнес-аналитика</label>
+		  		<input type="checkbox" name="services" value="design" id="design" checked><label for="design" class="rectangle rectangle-narrow">Дизайн</label>
+		  		<input type="checkbox" name="services" value="development_and_integration" id="development_and_integration" checked><label for="development_and_integration" class="rectangle rectangle-wide">Разработка и интеграция</label>
+		  		<input type="checkbox" name="services" value="support" id="support"><label for="support" class="rectangle rectangle-narrow">Поддержка</label>
 		  	</fieldset>
-		  	<fieldset>
+
+		  	<fieldset class="fieldset-budget">
 		  		<legend>Планируемый бюджет</legend>
 		  		<input type="range" name="budget" min="0" max="10" step="5" value="0" id="budget-input" onchange="budgetOutput()">
 		  		<p class="output" id="budget-output"></p>
 		  	</fieldset>
-		  	<fieldset>
+
+		  	<fieldset class="fieldset-deadlines">
 		  		<legend>Сроки</legend>
 		  		<input type="range" name="deadline" min="1" max="12" step="1" value="2" id="deadline-input" onchange="deadlineOutput()">
 		  		<p class="output"><span id="deadline-output"></span><span id="months"></span></p>
 		  	</fieldset>
+
 				<fieldset>
 					<legend class="visually-hidden">Задача</legend>
-					<textarea name="task" placeholder="Опишите задачу"></textarea>
-					<input type="file" name="files[]" multiple accept="application/pdf,image/jpeg,image/png,image/tiff,image/x-tiff">
-					<div class="comment">
-						<p>Можно загрузить файлы и документы в&nbsp;формате pdf, jpeg, png, tiff</p>
-						<p>Максимальный размер — 30&nbsp;МБ</p>
-					</div>
-					<div>filename1.*</div>
+					<textarea name="task" rows="1" placeholder="Опишите задачу"></textarea>
+					<section class="file-upload">
+						<label class="file-upload-label"><input type="file" name="files[]" id="upload-files-input" multiple accept="application/pdf,image/jpeg,image/png,image/tiff,image/x-tiff">Прикрепить файл</label>
+						<div class="file-upload-output">
+							<ul class="file-upload-list">
+							</ul>
+						</div>
+						<div class="comment">
+							<p>Можно загрузить файлы и&nbsp;документы в&nbsp;формате pdf, jpeg, png, tiff</p>
+							<p>Максимальный размер — 30&nbsp;МБ</p>
+						</div>
+					</section>
 				</fieldset>
-	  		<fieldset>
+
+	  		<fieldset class="connection">
 	  			<legend>Как с&nbsp;вами связаться</legend>
-	  			<label for="client-name">Имя</label>
-	  			<input type="text" name="client-name" id="client-name" placeholder="Константин" required>
-	  			<input type="tel" name="client-telephone" pattern="^[ 0-9]+$" placeholder="Телефон" required>
+	  			<label for="client-name" id="client-name-label">Имя</label>
+	  			<input type="text" name="client-name" id="client-name" placeholder="Константин" required autofocus>
+	  			<input type="tel" name="client-telephone" id="client-telephone" pattern="^[ 0-9]+$" placeholder="Телефон" required>
 	  		</fieldset>
-	  		<button class="rectangle rectangle-big" type="submit">Отправить запрос</button>
-	  		<p class="comment">Нажимая на&nbsp;кнопку, вы даете согласие на&nbsp;обработку персональных данных и соглашаетесь с&nbsp;политикой конфиденциальности.</p>
-			</form>
-		</div>
+
+	  		<section class="send-request">
+		  		<button class="rectangle rectangle-big" type="submit">Отправить запрос</button>
+		  		<p class="comment">Нажимая на&nbsp;кнопку, вы даете согласие на&nbsp;обработку персональных данных и соглашаетесь с&nbsp;политикой конфиденциальности.</p>
+	  		</section>
+  		</div>
+  		<div class="right-column"></div>
+		</form>
 		<script src="./js/form.js"></script>
-		<script type="text/javascript">
+		<script>
 			budgetOutput();
 		  deadlineOutput();
 		</script>

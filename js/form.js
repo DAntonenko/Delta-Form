@@ -1,12 +1,4 @@
-/* var form = document.getElementById('request');
-
-var formHeader = form.querySelector("h1");
-var formHeaderAfter = form.querySelector("h1::after");
-
-form.classList.add('dimensionally-hidden');
-
-formHeader.classList.add('dimensionally-discovered');
-console.log(formHeaderAfter); */
+// sliders values output
 
 function budgetOutput() {
   var x = document.getElementById('budget-input').value;
@@ -31,4 +23,40 @@ function deadlineOutput() {
   };
   document.getElementById('deadline-output').innerHTML = x;
   document.getElementById('months').innerHTML = mon;
+};
+
+// upload files list
+
+var control = document.getElementById('upload-files-input');
+control.addEventListener("change", function(evt) {
+  var i = 0,
+      files = control.files,
+      len = files.length;
+
+  for (; i < len; i++) {
+      console.log("Filename: " + files[i].name);
+      var li = document.createElement('li');
+			li.className = 'upload-list-element';
+			li.innerHTML = files[i].name;
+			var parentElem = document.querySelector('.file-upload-list');
+			parentElem.appendChild(li);
+
+      console.log("Type: " + files[i].type);
+
+      console.log("Size: " + files[i].size + " bytes");
+  }
+ 
+}, false);
+
+// display label for focused input
+
+var clientName = document.getElementById('client-name');
+var clientNameLabel = document.getElementById('client-name-label');
+
+clientName.onfocus = function() {
+	clientNameLabel.classList.add('label-show');
+};
+
+clientName.onblur = function() {
+	clientNameLabel.classList.remove('label-show');
 };
